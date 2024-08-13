@@ -1,0 +1,125 @@
+ * {
+    margin: 0%;
+    padding: 0%;
+ }
+ 
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --color-blanco: white;
+    --colorPrimario: #F8E8E8;
+    --colorSecundario: #A67C52;
+    --colorTerciario: #9f4292;
+    --colorCuaternario: #D45D79;
+    --colorTexto: #555;
+    --colorSubtitulos: #333;
+    --colorSombras: #888888;
+
+    --font-andika: 'Andika', sans-serif;
+    --fontSize24: 1.5rem;
+    --fontSize18: 1.125rem;
+    --fontSize36: 2rem;
+
+
+}
+
+ body {
+     font-family: var(--font-andika);
+     background-color: var(--colorPrimario);
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     justify-content: space-between;
+     color: var(--colorSubtitulos);
+ }
+
+ header {
+     padding: 20px;
+     text-align: center;
+     background-color: var(--colorTerciario);
+     color: var(--color-blanco);
+     font-size: var(--fontSize24);
+     font-weight: bold;
+ }
+
+ .container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-grow: 1;
+     padding: 2.5rem;
+ }
+
+ .input-area,
+ .output-area {
+     background-color: var(--color-blanco);
+     border: 0.125rem solid var(--colorSecundario);
+     border-radius: 10px;
+     padding: 1.25rem;
+     width: 45%;
+     margin: 0 0.625re;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+ }
+
+.input-area h2,
+.output-area h2 {
+    color: #9F4292;
+    font-size: var(--fontSize24);
+    /* 20 size */
+    margin-bottom: 1.25rem;
+}
+
+ .input-area textarea,
+ .output-area textarea {
+     width: 100%;
+     height: 75%;
+     border: 1px solid var(--colorSecundario);
+     border-radius: 5px;
+     padding: 5%;
+     font-size: var(--fontSize18);
+     /* size 16 */
+     color: var(--colorTerciario);
+     background-color: var(--colorPrimario);
+     box-sizing: border-box;
+     resize: none;
+ }
+
+ .buttons {
+     margin-top: 10%;
+     text-align: center;
+ }
+
+ .buttons button {
+     background-color: var(--colorTerciario);
+     border: none;
+     color: var(--color-blanco);
+     padding: 2% 7%;
+     margin: 0 3%;
+     font-size: var(--fontSize18);
+     /* 16 size */
+     cursor: pointer;
+     border-radius: 10rem;
+ }
+
+ .buttons button.desencriptar {
+     background-color: var(--colorCuaternario);
+ }
+
+.buttons button.copiar {
+    background-color: #429F5F;
+}
+
+.buttons button:hover {
+    opacity: 0.85;
+}
+
+ .output-area {
+     background-color: var(--colorPrimario);
+ }
+
+ footer {
+     text-align: center;
+     padding: 10px;
+     background-color: var(--colorSecundario);
+     color: var(--color-blanco);
+ }
