@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -14,18 +15,23 @@
     <div class="container">
         <div class="input-area">
             <h2>Ingrese el texto aquí</h2>
-            <textarea placeholder="Ingrese el texto que desea encriptar o desencriptar"></textarea>
+            <textarea id="inputText" placeholder="Ingrese el texto que desea encriptar o desencriptar"></textarea>
             <div class="buttons">
-                <button>Encriptar</button>
-                <button class="desencriptar">Desencriptar</button>
+                <button onclick="encriptar()">Encriptar</button>
+                <button class="desencriptar" onclick="desencriptar()">Desencriptar</button>
             </div>
+            <p class="note">* Solo letras minúsculas y sin acentos</p>
         </div>
+        
     
         <div class="output-area">
             <h2>Texto encriptado/desencriptado</h2>
-            <textarea readonly placeholder="Aquí se mostrará el texto encriptado o desencriptado"></textarea>
+            <div class="output-image" id="outputImage">
+                <img src="https://via.placeholder.com/150" alt="Imagen Placeholder">
+            </div>
+            <textarea id="outputText" class="output-text" readonly placeholder="Aquí se mostrará el texto encriptado o desencriptado"></textarea>
             <div class="buttons">
-                <button class="copiar">Copiar</button>
+                <button class="copiar" onclick="copiarTexto()">Copiar</button>
             </div>
         </div>
     </div>
