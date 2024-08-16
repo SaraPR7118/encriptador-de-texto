@@ -12,6 +12,8 @@
     --colorTerciario: #9f4292;
     --colorCuaternario: #D45D79;
     --colorQuinteario: #429F5F;
+    --colorDrarkBlue: #5267A6;
+    --colorLightBlue: #757FB2;
     --colorTexto: #555;
     --colorSubtitulos: #333;
     --colorSombras: #888888;
@@ -37,13 +39,26 @@
  }
 
  header {
-     padding: 20px;
-     text-align: center;
+    display: flex;
+    text-align: center;
+    gap: 30%;
+     padding: 10px;
      background-color: var(--colorTerciario);
      color: var(--color-blanco);
-     font-size: var(--fontSize24);
+     font-size: var(--fontSize20);
      font-weight: bold;
  }
+
+ header h3 {
+    margin-top: 1%;
+ }
+
+header img {
+     max-width: 5%;
+     height: auto;
+     text-align: left;
+     border-radius: 50%; 
+}
 
  .container {
      display: flex;
@@ -53,40 +68,50 @@
      padding: 2.5rem;
  }
 
- .input-area,
- .output-area {
-     background-color: var(--color-blanco);
-     border: 0.125rem solid var(--colorSecundario);
+ .input-area {
      border-radius: 10px;
-     padding: 1.25rem;
-     width: 45%;
-     margin: 0 0.625re;
-     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+     width: 65%;
+     margin: 0 5%;
+     margin-top: 5%;
  }
 
-.input-area h2,
+.output-area {
+    background-color: var(--colorPrimario);
+    border-radius: 10px;
+    padding: 5%;
+    width: 35%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .output-area h2 {
-    color: #9F4292;
+    color: var(--colorTerciario);
     font-size: var(--fontSize20);
     margin-bottom: 1.25rem;
 }
 
  .input-area textarea,
  .output-area textarea {
-     width: 100%;
-     height: 75%;
-     border: 1px solid var(--colorSecundario);
-     border-radius: 5px;
-     padding: 5%;
-     font-size: var(--fontSize16);
-     color: var(--colorTerciario);
-     background-color: var(--colorPrimario);
-     box-sizing: border-box;
-     resize: none;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    /* Cambia el tamaño mínimo para mostrar 10 líneas aproximadamente */
+    border: none;
+    /* Quitar borde */
+    border-radius: 5px;
+    padding: 5%;
+    font-size: var(--fontSize16);
+    color: var(--colorDrarkBlue);
+    background-color: var(--colorPrimario);
+    box-sizing: border-box;
+    resize: none;
+ }
+
+ .input-area textarea {
+    color: #333;
  }
 
  .buttons {
-     margin-top: 10%;
+     margin-top: 3%;
      text-align: center;
      display: flex;
      justify-content: center;
@@ -96,7 +121,7 @@
      background-color: var(--colorTerciario);
      border: none;
      color: var(--color-blanco);
-     padding: 2% 7%;
+     padding: 2% 10%;
      margin: 0 3%;
      font-size: var(--fontSize16);
      cursor: pointer;
@@ -110,15 +135,24 @@
 
 .buttons button.copiar {
     background-color: var(--colorQuinteario);
+    margin: 10%;
 }
 
 .buttons button:hover {
     opacity: 0.85;
 }
 
- .output-area {
-     background-color: var(--colorPrimario);
- }
+.obligacion {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.obligacion img {
+    margin-top: 10%;
+    width: 3%;
+    height: 2%;
+}
 
 .note {
     font-size: 12px;
@@ -129,14 +163,31 @@
 
 .output-image {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 150px;
+    margin: 20%;
 }
 
 .output-image img {
+    width: 100%;
+    height: auto;
     max-width: 100%;
     max-height: 100%;
+}
+
+.output-image h3 {
+    color: var(--colorLightBlue);
+    text-align: center;
+    width: 90%;
+}
+
+.output-image p {
+    color: var(--colorSecundario);
+    text-align: center;
+    margin: 5%;
+    width: 90%;
 }
 
 .output-text {
@@ -148,4 +199,61 @@
      padding: 10px;
      background-color: var(--colorSecundario);
      color: var(--color-blanco);
+ }
+
+ @media screen and (max-width: 1024px) {
+     .container {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .input-area,
+     .output-area {
+         width: 90%;
+         margin: 1rem 0;
+     }
+
+     .output-image img {
+         display: none;
+     }
+
+     .output-image h3,
+     .output-image p {
+         text-align: center;
+         width: 100%;
+         margin: 1rem 0;
+     }
+
+     .buttons button.copiar {
+         margin-top: 2rem;
+     }
+ }
+
+ @media screen and (max-width: 768px) {
+
+     .input-area,
+     .output-area {
+         width: 100%;
+         padding: 0 2rem;
+     }
+
+     .output-image img {
+         display: none;
+     }
+
+     .output-image h3,
+     .output-image p {
+         width: 100%;
+         margin: 1rem 0;
+     }
+
+     .output-text textarea {
+         height: 150px;
+         /* Ajuste la altura para dispositivos móviles */
+     }
+
+     .buttons button {
+         padding: 10px 40px;
+         /* Ajusta el padding para móviles */
+     }
  }

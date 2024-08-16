@@ -1,12 +1,9 @@
- // Lógica de encriptación: Reemplazar vocales por números o símbolos 
+// Lógica de encriptación: Reemplazar vocales por números o símbolos 
 function encriptar() {
     const inputText = document.getElementById('inputText').value;
-    const outputText = document.getElementById('outputText');
+    const outputTextArea = document.querySelector('.output-text textarea'); // Selecciona el textarea dentro de output-text
     const outputImage = document.getElementById('outputImage');
 
-    document.getElementById("outputImage").style.display = "none";
-    document.getElementById("outputText").style.display = "initial";
-    
     if (inputText) {
         let encriptado = inputText
             .replace(/e/g, "enter")
@@ -15,20 +12,19 @@ function encriptar() {
             .replace(/o/g, "ober")
             .replace(/u/g, "ufat");
 
-        outputText.value = encriptado;
-        outputText.style.display = 'block';
+        outputTextArea.value = encriptado;
+        document.getElementById("outputText").style.display = "block";
         outputImage.style.display = 'none';
+    } else {
+        outputImage.style.display = 'block';
+        document.getElementById("outputText").style.display = "none";
     }
-
 }
 
 function desencriptar() {
     const inputText = document.getElementById('inputText').value;
-    const outputText = document.getElementById('outputText');
+    const outputTextArea = document.querySelector('.output-text textarea'); // Selecciona el textarea dentro de output-text
     const outputImage = document.getElementById('outputImage');
-
-    document.getElementById("outputImage").style.display = "none";
-    document.getElementById("outputText").style.display = "initial";
 
     if (inputText) {
         let desencriptado = inputText
@@ -38,16 +34,18 @@ function desencriptar() {
             .replace(/ober/g, "o")
             .replace(/ufat/g, "u");
 
-        outputText.value = desencriptado;
-        outputText.style.display = 'block';
+        outputTextArea.value = desencriptado;
+        document.getElementById("outputText").style.display = "block";
         outputImage.style.display = 'none';
+    } else {
+        outputImage.style.display = 'block';
+        document.getElementById("outputText").style.display = "none";
     }
-
 }
 
 function copiarTexto() {
-    const outputText = document.getElementById('outputText');
-    outputText.select();
+    const outputTextArea = document.querySelector('.output-text textarea'); // Selecciona el textarea dentro de output-text
+    outputTextArea.select();
     document.execCommand('copy');
     alert("Texto copiado al portapapeles");
 }
